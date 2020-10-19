@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Gioco di sto cazzo</title>
+</head>
+<body>
+    <h1>Gioco dove si vince sempre</h1> 
+    <button id="rules-btn" class="btn rules-btn"> Show Rules </button>
+    <div id="rules" class="rules">
+        <h2>Come giocare</h2>
+        <p>
+            Clicca una casella del cazzo e vedi se trovi una bomba o dello spzio
+            libero. Se pensi di sapere dove è una bomba clicca con shift lmb cosi
+            ci metti una bandierina del cazzo.
+        </p>
+        <p>
+            Se sbagli va fan culo a te non devi cliccare dove ci sono le bombe.
+        </p>
+        <button id="close-btn" class="btn">Chiudi help del cazzo</button>
+    </div>
+    <div class="menu">
+        <button id="startbtn" class="btn txtbig"> start the game </button>
+    </div>
+    
+    <div class='output'>
+        <div id="mineoutput">
+            mine: 10
+        </div>
+        <div id="cellflagmarkedoutput">
+            flag: 10
+        </div>
+        <div id="covercelloutput">
+            cover cell: 10
+        </div>
+        <div id="opencelloutput">
+            open cell: 10
+        </div>
+    </div>    
+    
+    <canvas id="canvas" width="800" height="600"></canvas>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

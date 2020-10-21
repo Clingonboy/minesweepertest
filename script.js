@@ -98,6 +98,12 @@ function drawGride(ctx, gameGride){
                 ctx.fillText(gameGride[x][y].number,y*game.w+game.w/2,x*game.w+game.w/2+5);
             }
 
+            if (gameGride[x][y].marked == true){
+                // drawing cell background for flag cell
+                ctx.fillStyle = "green";
+                ctx.fillRect(y*game.w+1, x*game.w+1, game.w-2, game.w-2);
+            }
+
         }
     }
 }
@@ -224,6 +230,22 @@ canvas.addEventListener('click', (e)=>{
     }
     // redraw the grid after click chenging
     drawGride(ctx, gameGride);
+})
+
+canvas.addEventListener('contextmenu', e => {
+    e.preventDefault();
+    let rect = canvas.getBoundingClientRect();
+    let pointRClick = {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+    };
+    let cellClicked = {x:0, y:0};
+    cellClicked.x = Math.floor(pointRClick.x / game.w);
+    cellClicked.y = Math.floor(pointRClick.y / game.w);
+    console.log(cellClicked);
+    gameGride[cellClicked.y][cellClicked.x].marked = !gameGride[cellClicked.y][cellClicked.x].marked;
+    drawGride(ctx, gameGride);
+    updateOutput();
 })
 
 //
